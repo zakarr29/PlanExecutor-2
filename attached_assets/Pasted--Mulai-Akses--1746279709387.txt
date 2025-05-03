@@ -1,0 +1,48 @@
++---------------------+      +---------------------+      +---------------------+
+| Mulai / Akses       |----->| Halaman Login /     |----->| Pengguna Memasukkan |
+| Aplikasi            |      | Sign Up             |      | Kredensial          |
++---------------------+      +-------+-------------+      +---------+-----------+
+                                     |                            |
+                                     | [Pilih Login]              | [Field: Username, Password]
+                                     |                            |
+                                     v                            v
++------------------------+      +---------------------+      +---------------------+
+| [Opsi: Belum Punya Akun] |<-+---| Tombol "Login" Ditekan|      | [Opsi: Lupa Password] |
+| --> Alur Sign Up       |      +---------+-----------+      | --> Alur Lupa Pass  |
++------------------------+                |                     +---------------------+
+                                          v
+                            +---------------------------+
+                            | [Proses] Sistem Menerima  |
+                            | Kredensial & Memvalidasi  |
+                            +-------------+-------------+
+                                          |
+                                          v
+                            +---------------------------+
+                            | [Keputusan] Kredensial    |
+                            | Valid? (User ada?         |
+                            | Pass cocok dg hash?)      |
+                            +-------------+-------------+
+                                          |
+                            +-------------+-------------+
+                            |   (Ya)      |    (Tidak)  |
+                            +-------------+-------------+
+                                  |             |
+                                  v             v
+                  +---------------------+   +---------------------------+
+                  | [Proses] Login      |   | [Proses] Tampilkan Pesan  |
+                  | Berhasil            |   | Error                     |
+                  | (Buat Session/Token)|   | ("Kredensial Tidak Valid")|
+                  +---------+-----------+   +-------------+-------------+
+                            |                             |
+                            v                             | Kembali ke Halaman Login
+                  +---------------------+                 | (atau tetap di halaman yg sama
+                  | [Proses] Arahkan ke |<----------------+  dengan pesan error)
+                  | Halaman Dashboard   |
+                  | (Menu Utama)        |
+                  +---------------------+
+                            |
+                            v
+                  +---------------------+
+                  | Selesai (User Login)|
+                  +---------------------+
+
